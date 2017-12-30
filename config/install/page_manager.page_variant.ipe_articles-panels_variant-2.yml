@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.ipe_articles
+    - views.view.bt_articles
+  module:
+    - panels
+    - views
+id: ipe_articles-panels_variant-2
+label: 'Articles Variant 2'
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  label: null
+  weight: 0
+  layout: two_col
+  layout_settings: {  }
+  page_title: Articles
+  storage_type: page_manager
+  storage_id: ipe_articles-panels_variant-2
+  builder: ipe
+  uuid: ab8e3aca-ccb8-424a-b1de-39103bd5c712
+page: ipe_articles
+weight: 2
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

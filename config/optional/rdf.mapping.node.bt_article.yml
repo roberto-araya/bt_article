@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bt_article
+  module:
+    - node
+id: node.bt_article
+targetEntityType: node
+bundle: bt_article
+types:
+  - 'schema:Article'
+fieldMappings:
+  title:
+    properties:
+      - 'schema:name'
+  field_bt_category:
+    properties:
+      - ''
+  field_bt_cuerpo:
+    properties:
+      - 'schema:articleBody'
+  field_bt_tags:
+    properties:
+      - ''
+  field_bt_content_image:
+    properties:
+      - 'schema:image'
+  field_bt_title_foot:
+    properties:
+      - ''
+  field_bt_resena:
+    properties:
+      - ''

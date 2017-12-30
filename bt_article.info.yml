@@ -1,0 +1,26 @@
+name: Btester Article
+description: 'Article content type'
+type: module
+core: 8.x
+dependencies:
+  - bt_media
+  - field
+  - field_group
+  - field_states_ui
+  - image
+  - language
+  - menu_ui
+  - node
+  - path
+  - rdf
+  - text
+  - user
+  - content_moderation
+  - inline_entity_form
+  - maxlength
+  - media_entity
+  - media_entity_image
+  - media_pinkeye
+  - entity_forms_in_blocks
+version: 8.x-1.0
+package: Btester

@@ -1,0 +1,23 @@
+{
+  "name": "drupal/bt_article",
+  "type": "drupal-module",
+  "description": "",
+  "keywords": ["Drupal"],
+  "homepage": "https://www.drupal.org/project/bt_article",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Roberto Araya",
+      "email": "roberto.araya@btester.cl",
+      "homepage": "https://www.drupal.org/u/roberto_araya",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bt_article",
+    "source": "http://git.drupal.org/project/bt_article.git"
+  },
+  "require": {
+    "drupal/bt_cms": "dev-master"
+  }
+}

@@ -1,0 +1,10 @@
+third_party_settings:
+  field_group:
+    group_content:
+      format_settings:
+        label: Contenido
+        description: 'Cree un nuevo artículo para presentar en este bloque o seleccione un artículo de su biblioteca de contenidos.'
+content:
+  field_bt_node_reference:
+    settings:
+      label_singular: Artículo

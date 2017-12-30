@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: bt_articles_categories
+label: 'Articles Categories'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/articles/category/[term:name]'
+selection_criteria:
+  5e67eaeb-3123-4884-a783-ca3ba5b552e5:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      bt_categories: bt_categories
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 5e67eaeb-3123-4884-a783-ca3ba5b552e5
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,7 @@
+<?php
+
+function bt_article_install() {
+    //Add path alias
+    \Drupal::service('path.alias_storage')->save('/block/add/bt_article', '/app/website/blocks/add/article', 'en');
+    \Drupal::service('path.alias_storage')->save('/app/website/content/create/bt_article', '/app/website/content/create/article', 'en');
+}

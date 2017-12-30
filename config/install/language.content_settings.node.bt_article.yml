@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bt_article
+id: node.bt_article
+target_entity_type_id: node
+target_bundle: bt_article
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.ipe_articles
+    - views.view.bt_articles_file
+    - views.view.bt_articles
+    - views.view.bt_article_tags
+  module:
+    - panels
+    - views
+id: ipe_articles-panels_variant-0
+label: 'Default Articles'
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  label: null
+  wight: 0
+  layout: two_col
+  page_title: Articles
+  builder: ipe
+  layout_settings: {  }
+  storage_type: page_manager
+  storage_id: ipe_articles-panels_variant-0
+  uuid: 0173c79b-8304-48ce-b20d-9c93de1a0ad6
+  weight: 0
+page: ipe_articles
+weight: -1
+selection_criteria: {  }
+selection_logic: and
+static_context: {  } 

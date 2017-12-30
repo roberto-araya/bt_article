@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt_article
+label: Article
+revision: 0
+description: 'Present article.'

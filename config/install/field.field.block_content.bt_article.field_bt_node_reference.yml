@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_article
+    - field.storage.block_content.field_bt_node_reference
+    - node.type.bt_article
+id: block_content.bt_article.field_bt_node_reference
+field_name: field_bt_node_reference
+entity_type: block_content
+bundle: bt_article
+label: Article
+description: 'Select the article that you want to show.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      bt_article: bt_article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

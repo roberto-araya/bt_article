@@ -1,0 +1,2 @@
+label: 'Categorías Artículos'
+pattern: '/articulos/categoria/[term:name]'

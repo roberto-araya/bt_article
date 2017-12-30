@@ -1,0 +1,2 @@
+label: 'Etiquetas Artículos'
+pattern: '/articulos/etiqueta/[term:name]'

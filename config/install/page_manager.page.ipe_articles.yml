@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ipe_articles
+label: Articles
+description: 'Show a public list of all redacted articles in the application.'
+use_admin_theme: false
+path: /articles
+access_logic: and
+access_conditions: {  }
+parameters: {  }

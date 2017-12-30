@@ -1,0 +1,2 @@
+bt_articles_ipe_pages_menu:
+  deriver: \Drupal\bt_article\Plugin\Derivative\IpePageMenuLinkDerivative
