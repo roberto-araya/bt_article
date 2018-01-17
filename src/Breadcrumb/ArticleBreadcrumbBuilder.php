@@ -13,7 +13,7 @@ use Drupal\Core\Link;
 class ArticleBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
   /**
-   * @var System site name
+   * @var siteName
    */
   protected $siteName;
 

@@ -5,22 +5,21 @@
  * Module file for bt_article.
  */
 
+use Drupal\node\NodeInterface;
+
 /**
  * Implements hook_entity_insert()
  *
  * @param \Drupal\node\NodeInterface $entity
- */use Drupal\node\NodeInterface;
-
-/**
- * {@inheritdoc}
  */
 function bt_article_node_insert(NodeInterface $entity) {
   // Convert to lowercase, trim spaces, replace spaces with underscore and then
   // truncate to 60 chars.
   $pathTitle = substr(str_replace(" ", "-", trim(strtolower($entity->label()))), 0, 60);
-  // $author = $entity->getRevisionAuthor()->getUsername();
+
   if ($entity->bundle() == 'bt_article') {
     \Drupal::service('path.alias_storage')->save("/node/" . $entity->id() . '/edit', "/articles/" . $pathTitle . '/edit', "en");
     \Drupal::service('path.alias_storage')->save("/node/" . $entity->id() . '/delete', "/articles/" . $pathTitle . '/delete', "en");
   }
+
 }
