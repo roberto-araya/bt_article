@@ -13,14 +13,16 @@ use Drupal\Core\Link;
 class ArticleBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
   /**
-   * @var siteName
+   * The Site name.
+   *
+   * @var string
    */
   protected $siteName;
 
   /**
    * The routes that will change their breadcrumbs.
    *
-   * @var routes
+   * @var array
    */
   private $routes = [
     'page_manager.page_view_bt_add_article',
