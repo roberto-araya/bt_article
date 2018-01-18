@@ -8,9 +8,7 @@
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_entity_insert()
- *
- * @param \Drupal\node\NodeInterface $entity
+ * Implements hook_entity_insert().
  */
 function bt_article_node_insert(NodeInterface $entity) {
   // Convert to lowercase, trim spaces, replace spaces with underscore and then
