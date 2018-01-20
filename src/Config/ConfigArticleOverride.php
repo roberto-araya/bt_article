@@ -44,7 +44,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
         'revert bt_article revisions',
         'view bt_article revisions',
       ];
-      $content_role = $this->create_content;
+      $content_role = $this->createContent;
       $permissions = array_merge($content_role->get('permissions'), $article_permissions);
       $overrides['user.role.bt_create_content']['permissions'] = $permissions;
     }
@@ -54,7 +54,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
         'delete any bt_article content',
         'delete bt_article revisions',
       ];
-      $content_role = $this->delete_content;
+      $content_role = $this->deleteContent;
       $permissions = array_merge($content_role->get('permissions'), $article_permissions);
       $overrides['user.role.bt_delete_content']['permissions'] = $permissions;
     }
@@ -63,7 +63,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
       $article_permissions = [
         'delete own bt_article content',
       ];
-      $content_role = $this->delete_own_content;
+      $content_role = $this->deleteOwnContent;
       $permissions = array_merge($content_role->get('permissions'), $article_permissions);
       $overrides['user.role.bt_delete_own_content']['permissions'] = $permissions;
     }
@@ -72,7 +72,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
       $article_permissions = [
         'edit any bt_article content',
       ];
-      $content_role = $this->edit_content;
+      $content_role = $this->editContent;
       $permissions = array_merge($content_role->get('permissions'), $article_permissions);
       $overrides['user.role.bt_edit_publish_content']['permissions'] = $permissions;
     }
@@ -81,7 +81,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
     ];
     // Add article filter values to views.view.bt_admin_content view.
     if (in_array('views.view.bt_admin_content', $names)) {
-      $views = $this->views_admin_content;
+      $views = $this->viewsAdminContent;
       $filter_values = $views->get('display.default.display_options.filters.type.value');
       $values = array_merge($filter_values, $article_values);
       $overrides['views.view.bt_admin_content']['display']['default']['display_options']['filters']['type']['value'] = $values;
@@ -89,7 +89,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
     }
     // Add article filter values to views.view.bt_full_admin_content view.
     if (in_array('views.view.bt_full_admin_content', $names)) {
-      $views = $this->views_full_admin_content;
+      $views = $this->viewsFullAdminContent;
       $filter_values = $views->get('display.default.display_options.filters.type.value');
       $values = array_merge($filter_values, $article_values);
       $overrides['views.view.bt_full_admin_content']['display']['default']['display_options']['filters']['type']['value'] = $values;

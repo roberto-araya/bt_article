@@ -19,7 +19,6 @@ dependencies:
   - maxlength:maxlength
   - media_entity:media_entity
   - media_entity_image:media_entity_image
-  - media_pinkeye:media_pinkeye
   - entity_forms_in_blocks:entity_forms_in_blocks
   - bt_media:bt_media
 package: Btester
