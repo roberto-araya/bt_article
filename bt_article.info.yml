@@ -17,7 +17,6 @@ dependencies:
   - field_states_ui:field_states_ui
   - inline_entity_form:inline_entity_form
   - maxlength:maxlength
-  - media_entity_image:media_entity_image
   - entity_forms_in_blocks:entity_forms_in_blocks
   - bt_media:bt_media
 package: Btester
