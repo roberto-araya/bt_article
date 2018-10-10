@@ -18,6 +18,6 @@
     "source": "http://git.drupal.org/project/bt_article.git"
   },
   "require": {
-    "drupal/bt_cms": "1.x-dev"
+    "drupal/bt_cms": "dev-dev"
   }
 }
