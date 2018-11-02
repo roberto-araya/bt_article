@@ -243,7 +243,7 @@ display:
         operator: AND
         groups:
           1: AND
-      title: Categorias
+      title: Category
       pager:
         type: some
         options:
@@ -316,7 +316,7 @@ display:
         operator: AND
         groups:
           1: AND
-      title: Etiquetas
+      title: Tags
       pager:
         type: some
         options:

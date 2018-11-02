@@ -282,7 +282,7 @@ display:
       query:
         type: views_query
         options: {  }
-      path: archivo-articulos
+      path: file-articles
       display_extenders: {  }
       display_description: Btester
     cache_metadata:

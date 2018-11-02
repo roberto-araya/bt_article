@@ -1,0 +1,31 @@
+label: 'Etiquetas Artículos'
+description: 'Etiquetas usadas por los contenidos artículos.'
+display:
+  default:
+    display_title: Mestro
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todos -'
+      title: 'Etiquetas Artículos'
+  bt_cat_articles:
+    display_title: 'Categorías Artículos'
+    display_options:
+      display_description: 'Categorías Artículos'
+      block_description: 'Categorías Artículos'
+      block_category: 'Listas Contenido'
+      title: Categorías
+  bt_tags_articles:
+    display_title: 'Etiquetas Artículos'
+    display_options:
+      display_description: 'Etiquetas Artículos'
+      block_description: 'Etiquetas Artículos'
+      block_category: 'Listas Contenido'
+      title: Etiquetas
