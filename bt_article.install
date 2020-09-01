@@ -12,4 +12,33 @@ function bt_article_install() {
   // Add path alias.
   \Drupal::service('path.alias_storage')->save('/block/add/bt_article', '/app/website/blocks/add/article', 'en');
   \Drupal::service('path.alias_storage')->save('/app/website/content/create/bt_article', '/app/website/content/create/article', 'en');
+
+  // Add permissions to the roles.
+  $roles = [
+    'user.role.bt_create_content' => [
+      'create bt_article content',
+      'edit own bt_article content',
+      'revert bt_article revisions',
+      'view bt_article revisions',
+    ],
+    'user.role.bt_delete_content' => [
+      'delete any bt_article content',
+      'delete bt_article revisions',
+    ],
+    'user.role.bt_delete_own_content' => [
+      'delete own bt_article content',
+    ],
+    'user.role.bt_edit_publish_content' => [
+      'edit any bt_article content',
+    ],
+  ];
+
+  foreach ($roles as $role => $new_permissions) {
+    $permissions = \Drupal::service('config.factory')->get($role)->get('permissions');
+
+    $config = \Drupal::service('config.factory')->getEditable($role);
+    $config->set('permissions', array_merge($permissions, $new_permissions));
+    $config->save();
+  }
+
 }

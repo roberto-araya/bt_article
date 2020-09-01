@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bt_article.field_bt_category
+    - field.field.node.bt_article.field_bt_content_image
+    - field.field.node.bt_article.field_bt_intro
+    - field.field.node.bt_article.field_bt_paragraphs
+    - field.field.node.bt_article.field_bt_tags
+    - field.field.node.bt_article.field_bt_title_foot
+    - node.type.bt_article
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.bt_article.default
+targetEntityType: node
+bundle: bt_article
+mode: default
+content:
+  content_moderation_control:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_category:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_bt_content_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_bt_intro:
+    type: text_default
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_bt_tags:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_bt_title_foot:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true

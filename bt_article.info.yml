@@ -2,6 +2,7 @@ name: Btester Article
 description: 'Article content type'
 type: module
 core: 8.x
+core_version_requirement: ^8
 dependencies:
   - drupal:field
   - drupal:image
@@ -18,5 +19,6 @@ dependencies:
   - inline_entity_form:inline_entity_form
   - maxlength:maxlength
   - bt_cms:bt_cms
+  - bt_cbc:bt_cbc
   - bt_image:bt_image
 package: Btester

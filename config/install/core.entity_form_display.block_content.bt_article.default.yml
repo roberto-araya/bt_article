@@ -3,51 +3,90 @@ status: true
 dependencies:
   config:
     - block_content.type.bt_article
-    - core.entity_form_mode.node.bt_block_form
+    - field.field.block_content.bt_article.field_bt_blq_desc
+    - field.field.block_content.bt_article.field_bt_blq_title
     - field.field.block_content.bt_article.field_bt_node_reference
   module:
     - field_group
-    - inline_entity_form
 third_party_settings:
   field_group:
     group_content:
       children:
         - field_bt_node_reference
       parent_name: ''
-      weight: 1
+      weight: 2
       label: Content
       format_type: fieldset
       format_settings:
-        label: Content
         description: 'Make a new article to show in this block or select one of your contents'
         id: ''
         classes: ''
         required_fields: false
+      region: content
+    group_block:
+      children:
+        - info
+        - field_bt_blq_desc
+        - field_bt_blq_title
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Block
 id: block_content.bt_article.default
 targetEntityType: block_content
 bundle: bt_article
 mode: default
 content:
-  field_bt_node_reference:
-    weight: 3
-    settings:
-      form_mode: bt_block_form
-      override_labels: true
-      label_singular: Article
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      collapsible: false
-      collapsed: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
-  info:
-    type: string_textfield
-    weight: 0
+  field_bt_blq_desc:
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  langcode: true
+    type: string_textfield
+    region: content
+  field_bt_blq_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_bt_node_reference:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

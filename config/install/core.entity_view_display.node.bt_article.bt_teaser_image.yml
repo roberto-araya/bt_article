@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.bt_teaser_image
+    - field.field.node.bt_article.field_bt_category
+    - field.field.node.bt_article.field_bt_content_image
+    - field.field.node.bt_article.field_bt_intro
+    - field.field.node.bt_article.field_bt_paragraphs
+    - field.field.node.bt_article.field_bt_tags
+    - field.field.node.bt_article.field_bt_title_foot
+    - node.type.bt_article
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.bt_article.bt_teaser_image
+targetEntityType: node
+bundle: bt_article
+mode: bt_teaser_image
+content:
+  field_bt_content_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: bt_block
+      link: false
+    third_party_settings: {  }
+  field_bt_intro:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_title_foot:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_bt_category: true
+  field_bt_paragraphs: true
+  field_bt_tags: true
+  langcode: true
+  links: true
+    
