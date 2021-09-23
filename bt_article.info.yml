@@ -1,8 +1,7 @@
 name: Btester Article
 description: 'Article content type'
 type: module
-core: 8.x
-core_version_requirement: ^8
+core_version_requirement: ^8.8
 dependencies:
   - drupal:field
   - drupal:image
