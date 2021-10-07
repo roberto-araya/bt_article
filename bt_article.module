@@ -16,8 +16,18 @@ function bt_article_node_insert(NodeInterface $entity) {
   $pathTitle = substr(str_replace(" ", "-", trim(strtolower($entity->label()))), 0, 60);
 
   if ($entity->bundle() == 'bt_article') {
-    \Drupal::service('path.alias_storage')->save("/node/" . $entity->id() . '/edit', "/articles/" . $pathTitle . '/edit', "en");
-    \Drupal::service('path.alias_storage')->save("/node/" . $entity->id() . '/delete', "/articles/" . $pathTitle . '/delete', "en");
+    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+      'path' => '/node/' . $entity->id() . '/edit',
+      'alias' => '/articles/' . $pathTitle . '/edit',
+    ]);
+    $path_alias->save();
+
+    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+      'path' => '/node/' . $entity->id() . '/delete',
+      'alias' => '/articles/' . $pathTitle . '/delete',
+    ]);
+    $path_alias->save();
+
   }
 
 }
