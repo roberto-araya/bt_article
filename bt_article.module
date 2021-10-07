@@ -6,6 +6,7 @@
  */
 
 use Drupal\node\NodeInterface;
+use Drupal\path_alias\Entity\PathAlias;
 
 /**
  * Implements hook_entity_insert().
@@ -16,13 +17,13 @@ function bt_article_node_insert(NodeInterface $entity) {
   $pathTitle = substr(str_replace(" ", "-", trim(strtolower($entity->label()))), 0, 60);
 
   if ($entity->bundle() == 'bt_article') {
-    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+    $path_alias = PathAlias::create([
       'path' => '/node/' . $entity->id() . '/edit',
       'alias' => '/articles/' . $pathTitle . '/edit',
     ]);
     $path_alias->save();
 
-    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+    $path_alias = PathAlias::create([
       'path' => '/node/' . $entity->id() . '/delete',
       'alias' => '/articles/' . $pathTitle . '/delete',
     ]);

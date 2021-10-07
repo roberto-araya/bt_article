@@ -5,18 +5,20 @@
  * Install, update and uninstall functions for bt_article.
  */
 
+use Drupal\path_alias\Entity\PathAlias;
+
 /**
  * {@inheritdoc}
  */
 function bt_article_install() {
   // Add path alias.
-  $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+  $path_alias = PathAlias::create([
     'path' => '/block/add/bt_article',
     'alias' => '/app/website/blocks/add/article',
   ]);
   $path_alias->save();
 
-  $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+  $path_alias = PathAlias::create([
     'path' => '/app/website/content/create/bt_article',
     'alias' => '/app/website/content/create/article',
   ]);
