@@ -10,9 +10,9 @@ dependencies:
     - field.field.node.bt_article.field_bt_title_foot
     - node.type.bt_article
   module:
-    - content_moderation
     - field_states_ui
     - inline_entity_form
+    - media_library
     - path
     - text
 id: node.bt_article.default
@@ -58,15 +58,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_bt_content_image:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 3
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      media_types: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Agregar
   field_bt_intro:
     type: text_textarea
     weight: 2
@@ -162,6 +164,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
