@@ -4,8 +4,3 @@ services:
     arguments: ['@config.factory']
     tags:
       - {name: config.factory.override, priority: 25}
-  bt_article.breadcrumbs:
-    class: Drupal\bt_article\Breadcrumb\ArticleBreadcrumbBuilder
-    arguments: ['@config.factory']
-    tags:
-      - { name: breadcrumb_builder, priority: 1010 }
