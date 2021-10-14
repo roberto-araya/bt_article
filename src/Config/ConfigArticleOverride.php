@@ -39,18 +39,6 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
   public function loadOverrides($names) {
     $overrides = [];
 
-    $article_values = [
-      'bt_article' => 'bt_article',
-    ];
-
-    // Add article filter values to views.view.bt_content view.
-    if (in_array('views.view.bt_content', $names)) {
-      $views = $this->viewsAdminContent;
-      $filter_values = $views->get('display.default.display_options.filters.type.value');
-      $values = array_merge($filter_values, $article_values);
-      $overrides['views.view.bt_content']['display']['default']['display_options']['filters']['type']['value'] = $values;
-    }
-
     if (in_array('workflows.workflow.editorial', $names)) {
       $workflow = $this->workflow;
       $entity_types_values = $workflow->get('type_settings.entity_types');
@@ -62,9 +50,7 @@ class ConfigArticleOverride implements ConfigFactoryOverrideInterface {
         $values = ['bt_article'];
         $overrides['workflows.workflow.editorial']['type_settings']['entity_types']['node'] = $values;
       }
-
     }
-
     return $overrides;
   }
 
