@@ -9,12 +9,61 @@ dependencies:
     - field.field.node.bt_article.field_bt_tags
     - field.field.node.bt_article.field_bt_title_foot
     - node.type.bt_article
+    - workflows.workflow.editorial
   module:
+    - content_moderation
+    - field_group
     - field_states_ui
-    - inline_entity_form
     - media_library
+    - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_clasificacion:
+      children:
+        - field_bt_category
+        - field_bt_tags
+      label: Clasificación
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_estado:
+      children:
+        - langcode
+        - moderation_state
+      label: Estado
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_contenido:
+      children:
+        - field_bt_paragraphs
+      label: Contenido
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
 id: node.bt_article.default
 targetEntityType: node
 bundle: bt_article
@@ -22,40 +71,36 @@ mode: default
 content:
   bt_fixed:
     type: boolean_checkbox
+    weight: 13
+    region: content
     settings:
       display_label: true
-    weight: 12
-    region: content
     third_party_settings: {  }
   bt_highlighted:
     type: boolean_checkbox
+    weight: 14
+    region: content
     settings:
       display_label: true
-    weight: 13
-    region: content
     third_party_settings: {  }
   bt_homepage_promoted:
     type: boolean_checkbox
+    weight: 15
+    region: content
     settings:
       display_label: true
-    weight: 14
-    region: content
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_bt_category:
-    type: entity_reference_autocomplete
-    weight: 5
+    type: options_select
+    weight: 6
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_bt_content_image:
     type: media_library_widget
@@ -78,37 +123,44 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_bt_paragraphs:
-    type: inline_entity_form_complex
-    weight: 4
+    type: paragraphs
+    weight: 5
     region: content
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      match_operator: CONTAINS
-      revision: false
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_existing: false
-      allow_duplicate: false
+      title: Párrafo
+      title_plural: Párrafos
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
     third_party_settings:
       field_states_ui:
         form:
           type: ''
           list: ''
-          add: Add
+          add: Agregar
   field_bt_tags:
-    type: entity_reference_autocomplete
-    weight: 6
+    type: entity_reference_autocomplete_tags
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Agregar
   field_bt_title_foot:
     type: string_textfield
     weight: 1
@@ -119,43 +171,43 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 7
+    weight: 6
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
-    settings: {  }
+    weight: 7
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 17
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 11
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -166,18 +218,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 12
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden: {  }
