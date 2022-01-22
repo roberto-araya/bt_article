@@ -11,7 +11,7 @@ field_name: field_bt_paragraphs
 entity_type: node
 bundle: bt_article
 label: Paragraphs
-description: 'Select the paragraphs type that you want add at your content.'
+description: ''
 required: true
 translatable: false
 default_value: {  }
