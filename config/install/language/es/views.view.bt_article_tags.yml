@@ -2,7 +2,7 @@ label: 'Etiquetas Artículos'
 description: 'Etiquetas usadas por los contenidos artículos.'
 display:
   default:
-    display_title: Mestro
+    display_title: Maestro
     display_options:
       exposed_form:
         options:

@@ -1,0 +1,25 @@
+third_party_settings:
+  field_group:
+    group_clasificacion:
+      label: Clasificación
+    group_estado:
+      label: Estado
+    group_contenido:
+      label: Contenido
+content:
+  field_bt_content_image:
+    third_party_settings:
+      field_states_ui:
+        form:
+          add: Agregar
+  field_bt_paragraphs:
+    settings:
+      title: Párrafo
+      title_plural: Párrafos
+    third_party_settings:
+          add: Agregar
+  field_bt_tags:
+    third_party_settings:
+      field_states_ui:
+        form:
+          add: Agregar

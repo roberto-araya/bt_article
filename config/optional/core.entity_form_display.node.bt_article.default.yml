@@ -24,7 +24,7 @@ third_party_settings:
       children:
         - field_bt_category
         - field_bt_tags
-      label: Clasificación
+      label: Classification
       region: content
       parent_name: ''
       weight: 6
@@ -39,7 +39,7 @@ third_party_settings:
       children:
         - langcode
         - moderation_state
-      label: Estado
+      label: Estate
       region: content
       parent_name: ''
       weight: 7
@@ -53,7 +53,7 @@ third_party_settings:
     group_contenido:
       children:
         - field_bt_paragraphs
-      label: Contenido
+      label: Content
       region: content
       parent_name: ''
       weight: 4
@@ -113,7 +113,7 @@ content:
         form:
           type: ''
           list: ''
-          add: Agregar
+          add: Add
   field_bt_intro:
     type: text_textarea
     weight: 2
@@ -127,8 +127,8 @@ content:
     weight: 5
     region: content
     settings:
-      title: Párrafo
-      title_plural: Párrafos
+      title: Paragraph
+      title_plural: Paragraphs
       edit_mode: closed
       closed_mode: preview
       autocollapse: all
@@ -145,7 +145,7 @@ content:
         form:
           type: ''
           list: ''
-          add: Agregar
+          add: Add
   field_bt_tags:
     type: entity_reference_autocomplete_tags
     weight: 7
@@ -160,7 +160,7 @@ content:
         form:
           type: ''
           list: ''
-          add: Agregar
+          add: Add
   field_bt_title_foot:
     type: string_textfield
     weight: 1

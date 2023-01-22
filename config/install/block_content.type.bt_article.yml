@@ -4,4 +4,4 @@ dependencies: {  }
 id: bt_article
 label: Article
 revision: 0
-description: 'Present article.'
+description: 'Show an article.'
