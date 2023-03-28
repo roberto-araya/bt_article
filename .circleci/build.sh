@@ -111,6 +111,9 @@ php -r "echo json_encode(array_replace_recursive(json_decode(file_get_contents('
 echo "  > Creating GitHub authentication token if provided."
 [ -n "$GITHUB_TOKEN" ] && composer config --global github-oauth.github.com "$GITHUB_TOKEN" && echo "Token: " && composer config --global github-oauth.github.com
 
+echo "  > Update composer.lock."
+php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" update
+
 echo "  > Installing dependencies."
 php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" install
 
