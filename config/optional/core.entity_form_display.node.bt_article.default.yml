@@ -5,9 +5,11 @@ dependencies:
     - field.field.node.bt_article.field_bt_category
     - field.field.node.bt_article.field_bt_content_image
     - field.field.node.bt_article.field_bt_intro
+    - field.field.node.bt_article.field_bt_metatags
     - field.field.node.bt_article.field_bt_paragraphs
     - field.field.node.bt_article.field_bt_tags
     - field.field.node.bt_article.field_bt_title_foot
+    - field.field.node.bt_article.layout_builder__layout
     - node.type.bt_article
     - workflows.workflow.editorial
   module:
@@ -15,6 +17,7 @@ dependencies:
     - field_group
     - field_states_ui
     - media_library
+    - metatag
     - paragraphs
     - path
     - text
@@ -27,7 +30,7 @@ third_party_settings:
       label: Classification
       region: content
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -42,7 +45,7 @@ third_party_settings:
       label: Estate
       region: content
       parent_name: ''
-      weight: 7
+      weight: 6
       format_type: fieldset
       format_settings:
         classes: ''
@@ -53,7 +56,7 @@ third_party_settings:
     group_contenido:
       children:
         - field_bt_paragraphs
-      label: Content
+      label: Contenido
       region: content
       parent_name: ''
       weight: 4
@@ -92,7 +95,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,13 +125,21 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_bt_metatags:
+    type: metatag_firehose
+    weight: 19
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_bt_paragraphs:
     type: paragraphs
     weight: 5
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Párrafo
+      title_plural: Párrafos
       edit_mode: closed
       closed_mode: preview
       autocollapse: all
@@ -190,10 +201,20 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap_index_now:
+    weight: 18
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -218,7 +239,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -232,4 +253,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true
