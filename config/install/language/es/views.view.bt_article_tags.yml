@@ -4,6 +4,7 @@ display:
   default:
     display_title: Maestro
     display_options:
+      title: 'Etiquetas Artículos'
       exposed_form:
         options:
           submit_button: Aplicar
@@ -14,7 +15,6 @@ display:
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todos -'
-      title: 'Etiquetas Artículos'
   bt_cat_articles:
     display_title: 'Categorías Artículos'
     display_options:

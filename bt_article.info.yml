@@ -20,4 +20,5 @@ dependencies:
   - bt_cms:bt_cms
   - bt_cbc:bt_cbc
   - bt_image:bt_image
+  - views_css_grid:views_css_grid
 package: Btester

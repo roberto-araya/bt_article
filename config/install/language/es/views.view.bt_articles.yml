@@ -4,63 +4,114 @@ display:
   default:
     display_title: Maestro
     display_options:
+      title: Artículos
+      pager:
+        options:
+          tags:
+            next: 'Siguiente >'
+            previous: '‹ Anterior'
+            first: '« Primero'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Ítemes por página'
+            items_per_page_options_all_label: '- Todos -'
       exposed_form:
         options:
           submit_button: Aplicar
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Elementos por página'
-            items_per_page_options_all_label: '- Todos -'
-          tags:
-            previous: '‹ Previos'
-            next: 'Siguientes ›'
-            first: '« Primeros'
-            last: 'Últimos »'
-      title: Artículos
+          reset_button: false
+          reset_button_label: Reiniciar
+          exposed_sorts_label: 'Ordernar por'
       empty:
         area_text_custom:
-          content: 'No hay artículos que mostrar aún.'
+          content: 'No hay artículos aun para mostrar.'
   all_post:
     display_title: 'Todos los artículos'
     display_options:
-      block_description: 'Todos los artículos'
-      block_category: 'Listas Contenido'
-      display_description: 'Una lista pública de todos los artículos.'
       pager:
         options:
           tags:
-            previous: '< Previos'
-            next: 'Siguientes >'
-            first: '<< Primeros'
-            last: 'Últimos >>'
+            next: Siguiente
+            previous: Anterior
+            first: Primero
+            last: Último
           expose:
-            items_per_page_label: 'Elementos por página'
+            items_per_page_label: 'Ítemes por página'
             items_per_page_options_all_label: '- Todos -'
+      display_description: 'Una lista pública de todos los artículos.'
+      block_description: 'Todos los artículos'
+      block_category: 'Listas Contenido'
+  all_post_page:
+    display_title: 'Página Todos los artículos'
+    display_options:
+      pager:
+        options:
+          tags:
+            next: Siguiente
+            previous: Anterior
+            first: Primero
+            last: Último
+          expose:
+            items_per_page_label: 'Ítemes por página'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all_label: '- Todos -'
+      defaults:
+      display_description: 'Una lista pública de todos los artículos.'
+  articles_by_categories:
+    display_title: 'Artículos por categoría'
+    display_options:
+      pager:
+        options:
+          tags:
+            next: Siguiente
+            previous: Anterior
+            first: Primero
+            last: Último
+          expose:
+            items_per_page_label: 'Ítemes por página'
+            items_per_page_options_all_label: '- Todos -'
+      display_description: 'Una lista pública de todos los artículos por categoria.'
+      block_description: 'Artículos por categoria.'
+      block_category: 'Listas Contenido'
+  articles_by_tags:
+    display_title: 'Artículos por etiqueta'
+    display_options:
+      pager:
+        options:
+          tags:
+            next: Siguiente
+            previous: Anterior
+            first: Primero
+            last: Último
+          expose:
+            items_per_page_label: 'Ítemes por página'
+            items_per_page_options_all_label: '- Todos -'
+      defaults:
+      display_description: 'Una lista pública de artículos por etiquetas.'
+      block_description: 'Artículos por etiquetas'
+      block_category: 'Listas Contenido'
   featured_post:
     display_title: 'Artículos destacados'
     display_options:
-      block_description: 'Artículos destacados'
+      display_description: 'Una lista pública de todos los artículos destacados.'
+      block_description: 'Artículos destacados.'
       block_category: 'Listas Contenido'
-      display_description: 'Una lista pública de todos los artículos promovidos como destacados.'
   front_post:
-    display_title: 'Artículos promovidos a la página de inicio.'
+    display_title: 'Artículos promocionados a la página de inicio.'
     display_options:
-      block_description: 'Artículos promovidos a la página de inicio.'
+      display_description: 'Una lista publica de todos los artículos promocionados a la página de inicio.'
+      block_description: 'Artículos promocionados a la página de inicio.'
       block_category: 'Listas Contenido'
-      display_description: 'Una lista pública de todos los artículos promovidos a la página de inicio.'
   last_post:
-    display_title: 'Últimos Artículos'
+    display_title: 'Últimos Articulos'
     display_options:
-      block_description: 'Últimos Artículos'
-      block_category: 'Listas Contenido'
+      title: 'Últimos Articulos'
       display_description: 'Una lista pública de los últimos artículos.'
-      title: 'Últimos Artículos'
-  related_post:
-    display_title: 'Artículos Relacionados'
-    display_options:
-      block_description: 'Artículos Relacionados.'
+      block_description: 'Últimos Articulos'
       block_category: 'Listas Contenido'
-      display_description: 'Una lista púbnlica de todos los artículos relacionados al artículo presentado.'
+  related_post:
+    display_title: 'Artículos relacionados'
+    display_options:
+      defaults:
+      display_description: 'Una lista pública de artículos relacionados al artículo presentado.'
+      block_description: 'Artículos relacionados'
+      block_category: 'Listas Contenido'
